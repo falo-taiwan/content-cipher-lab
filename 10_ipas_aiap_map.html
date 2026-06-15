@@ -207,44 +207,72 @@
       <tbody>
         <tr>
           <td>
-            <strong>雲端與異地備份安全</strong><br>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">備份檔上傳雲端若漏設權限會外洩；或者備份中途被竄改損毀。</span>
+            <strong>雲端與異地同步備份安全</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">備份檔上傳雲端若漏設權限會外洩；或者備份中途被竄改與感染勒索病毒。</span>
           </td>
           <td>
-            ISO 27001 備份控制<br>
-            ISO 27001 密碼學控制
+            ISO 27001 備份控制項<br>
+            ISO 27001 密碼學防護
           </td>
           <td>
-            <strong>AES 對稱加密</strong> 確保備份檔在地端完成加密才送出；<br>
-            <strong>SHA-256 雜湊驗證</strong> 確保還原前備份檔未被竄改。
+            在地端完成 <strong>AES-256 對稱加密</strong> 後才上傳雲端，確保洩漏時皆為亂碼；<br>
+            還原前比對 <strong>SHA-256 雜湊指紋</strong> 確保檔案完整性。
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>冷資料長期封存與合規歸檔</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">歷史交易、日誌與合約紀錄保存多年，期間容易因硬體損毀或遭內部人竄改。</span>
+          </td>
+          <td>
+            ISO 27001 安全日誌控制<br>
+            ISO 42001 可追溯性要求
+          </td>
+          <td>
+            使用 <strong>SHA-256 雜湊鏈（Hash Chain）</strong> 串接日誌，防堵修改單一欄位；<br>
+            以自動化 Checksum 校驗，提早偵測冷儲存媒介損壞。
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>雲端硬碟共用與跨企業檔案交換</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">共用雲端資料夾連結外流；設計圖、報表被下載後被二次轉傳洩漏。</span>
+          </td>
+          <td>
+            ISO 27001 存取控制<br>
+            ISO 42001 可信任安全控制
+          </td>
+          <td>
+            檔案強制以 <strong>ZIP/PDF 金鑰加密</strong> 共享；<br>
+            嵌入含有 `Falo x Force Cheng` 與使用者 ID 的 <strong>隱形元數據浮水印</strong>，追溯外洩起點。
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>個人離線備份與攜帶式裝置安全</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">員工在家工作或攜出系統備份之 USB 隨身碟或外接硬碟遺失洩密。</span>
+          </td>
+          <td>
+            ISO 27001 移動裝置安全<br>
+            台灣資安稽核實體控制
+          </td>
+          <td>
+            外接儲存體實施 <strong>BitLocker 等整碟加密</strong>；<br>
+            匯出資料庫備份強制封裝於 <strong>加密密碼容器</strong> 內。
           </td>
         </tr>
         <tr>
           <td>
             <strong>AI 雲端 API 通訊防洩密</strong><br>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">員工直接將個資或源碼貼給 ChatGPT 違反《個資法》。</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">員工直接將個資貼給外部 AI API（如 ChatGPT）違反《個人資料保護法》。</span>
           </td>
           <td>
             台灣人工智慧基本法 (隱私保護)<br>
-            ISO 42001 數據輸入安全
+            ISO 42001 數據輸入安全性
           </td>
           <td>
-            強制 <strong>HTTPS/TLS 通道</strong> 防止側錄；<br>
-            在傳輸前使用 <strong>去識別化混淆與對照字典</strong> 遮蔽敏感詞彙。
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <strong>稽核日誌防竄改與防外流</strong><br>
-            <span style="font-size: 0.85rem; color: var(--text-muted);">特權管理員外洩個資後自行修改 Log 逃避責任；或者敏感報告外流。</span>
-          </td>
-          <td>
-            ISO 27001 安全日誌<br>
-            ISO 42001 可追溯性要求
-          </td>
-          <td>
-            利用 <strong>SHA-256 雜湊鏈</strong> 串接 Log 防止竄改；<br>
-            在產出物中嵌入包含 <strong>Knowledge Provenance</strong> 與下載者 ID 的隱形浮水印。
+            強制 <strong>HTTPS/TLS 加密通道</strong> 阻斷側錄；<br>
+            傳輸前自動進行 <strong>語意去識別化 (Codebook 模式)</strong> 或 <strong>Base64 混淆</strong>。
           </td>
         </tr>
       </tbody>
