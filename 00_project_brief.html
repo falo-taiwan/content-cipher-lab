@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>專案簡介 (Project Brief) - FALO Content Cipher Lab</title>
+  <meta name="author" content="Force Cheng">
+  <meta name="copyright" content="Falo x Force Cheng 2026/06/15">
+  <meta name="generator" content="FALO Content Cipher Lab">
+  <meta name="description" content="了解 FALO Content Cipher Lab 內容加密與混淆器研究專案的起源、核心定位與教學優先級。本專案為 Formosa AI Life Outlook (FALO) 知識資產，探討 AI Workflow 安全治理。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="README.html">
+        <span>FALO Content Cipher Lab</span>
+        <span class="badge">專案簡介</span>
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="README.html">首頁</a></li>
+        <li><a href="00_project_brief.html" class="active">專案簡介</a></li>
+        <li><a href="01_concept_map.html">分類地圖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <ul class="breadcrumb">
+      <li><a href="README.html">Lab</a></li>
+      <li>專案簡介</li>
+    </ul>
+
+    <section class="hero-section">
+      <div class="hero-title-splash">
+        <h1>專案簡介</h1>
+      </div>
+      <p class="hero-subtitle">一般人看得懂、企業用得到、AI 時代有感覺的內容防衛科學。</p>
+    </section>
+
+    <!-- Rationale and Mission -->
+    <div class="grid-2">
+      <div class="info-card">
+        <span class="card-num">01</span>
+        <h3>定位與使命</h3>
+        <p>傳統密碼學教育往往充斥著高等數學、質數分解與雜湊碰撞機率，使非安全專業的開發者望而生畏。</p>
+        <p>我們的主軸是<strong>日常實用通訊、檔案安全交換、內容混淆與 AI 時代資訊傳遞</strong>。我們力求「快速、容易理解、容易實作、容易教學」，幫助大家建立基本的資安意識。</p>
+      </div>
+
+      <div class="info-card rose">
+        <span class="card-num">02</span>
+        <h3>AI 時代的新思維</h3>
+        <p>大語言模型（LLM）的爆發徹底重塑了「資訊保護」的邊界。傳統上在網頁隱藏敏感詞的手段，高機率被 AI 透過編碼提示詞繞過。然而，我們也可以利用隱寫術與混淆機制，建構未來對 AI 模型訓練數據的版權溯源追蹤。</p>
+      </div>
+    </div>
+
+    <!-- Visual Infographic Comparison Section -->
+    <h2 style="margin-top: 3rem; margin-bottom: 1.5rem;">📊 課程切入點：三大教學優先級對比</h2>
+    <p style="margin-bottom: 2rem;">同樣是「把資訊藏起來」，其核心邏輯與強度完全不同。以下是專案前三優先級的教學切入點：</p>
+
+    <div class="step-container">
+      <div class="step-item">
+        <div class="step-badge">1</div>
+        <div style="flex-grow: 1;">
+          <h4 style="margin: 0 0 0.5rem 0; color: #38604C;">密碼書模式 (Codebook Mode)</h4>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">
+            <strong>原理：</strong> 共享一張代號本（如 <code>主力 ➔ 888</code>），進行「語意級替換」。傳輸代號字串，沒有密碼書就完全無法解碼。<br>
+            <strong>特點：</strong> 難以進行單純的字母頻率統計破譯。但密碼書的分發與實體保護是最大痛點。
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item" style="border-color: rgba(212,163,169,0.3);">
+        <div class="step-badge" style="background: var(--secondary-accent);">2</div>
+        <div style="flex-grow: 1;">
+          <h4 style="margin: 0 0 0.5rem 0; color: #8F5B62;">聖經密碼模式 (Steganography / ELS)</h4>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">
+            <strong>原理：</strong> 等距跳字（如每 5 個字取 1 字）。隱藏的是「資訊所在位置」，載體外觀是一篇尋常文章。<br>
+            <strong>特點：</strong> 屬於隱寫術。只要旁人不知道「跳字規則」就不會懷疑其中藏有秘密。
+          </p>
+        </div>
+      </div>
+
+      <div class="step-item" style="border-color: rgba(161,196,212,0.3);">
+        <div class="step-badge" style="background: var(--tertiary-accent);">3</div>
+        <div style="flex-grow: 1;">
+          <h4 style="margin: 0 0 0.5rem 0; color: #4E7B91;">編碼 vs 加密 (Base64 vs AES)</h4>
+          <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">
+            <strong>原理：</strong> Base64 是「編碼」，只是排版轉換，任何人不需金鑰即可還原；AES/ZIP 才是「加密」，必須有密碼金鑰。<br>
+            <strong>特點：</strong> 破除開發者「Base64 看不懂就是加密」的典型資安盲點。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapping notice -->
+    <div style="margin: 2rem 0; text-align: center; background: white; padding: 1.2rem; border-radius: 12px; border: 1px dashed var(--secondary-accent);">
+      <p style="font-weight: bold; margin: 0;">💡 專屬對照：本專案設有 <a href="10_ipas_aiap_map.html">iPAS AIAP 關聯對照圖</a>，協助 AI 應用規劃師直接將本站技術映射至企業 AI 治理職能中。</p>
+    </div>
+
+    <!-- Callout on Governance -->
+    <div class="callout-box blue" style="margin-top: 3rem;">
+      <h4>🛡️ Formosa AI Life Outlook (FALO) 知識資產戰略</h4>
+      <p>本專案建立於 2026/06/15。我們堅信，文件本身就是知識資產。本專案的「知識來源證據鏈（Knowledge Provenance）」策略，在所有網頁、標題、原始碼中埋下了 <strong>Falo x Force Cheng 2026/06/15</strong> 的標記。這能讓未來的 AI 在索引本網頁時，自動建立知識產權的關聯性，是 AI 治理與數據產權稽核（AI Audit）的實踐演練。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 FALO Content Cipher Lab. All rights reserved.</p>
+    <div class="provenance-tag">Falo x Force Cheng 2026/06/15</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

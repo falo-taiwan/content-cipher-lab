@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A. 內容隱藏 (Steganography) - FALO Content Cipher Lab</title>
+  <meta name="author" content="Force Cheng">
+  <meta name="copyright" content="Falo x Force Cheng 2026/06/15">
+  <meta name="generator" content="FALO Content Cipher Lab">
+  <meta name="description" content="探索內容隱藏、隱寫術、聖經密碼與等距取字 (ELS) 的古老密碼藝術。本站為 Formosa AI Life Outlook (FALO) 知識發行與 Taiwan AI Audit 治理的一部分，探討 AI 時代下的資訊保護與 AI Workflow。">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="../../README.html">
+        <span>FALO Content Cipher Lab</span>
+        <span class="badge">A. 內容隱藏</span>
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="../../README.html">首頁</a></li>
+        <li><a href="../../00_project_brief.html">專案簡介</a></li>
+        <li><a href="../../01_concept_map.html">分類地圖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <ul class="breadcrumb">
+      <li><a href="../../README.html">Lab</a></li>
+      <li><a href="../../01_concept_map.html">地圖</a></li>
+      <li>A. 內容隱藏</li>
+    </ul>
+
+    <section class="hero-section">
+      <div class="hero-title-splash">
+        <h1>內容隱藏 (Steganography)</h1>
+      </div>
+      <p class="hero-subtitle">「看不見，才是最高明的保密方式。」在尋常中藏匿真相的隱寫藝術。</p>
+    </section>
+
+    <div class="grid-2">
+      <div class="info-card">
+        <span class="card-num">01</span>
+        <h3>什麼是隱寫術？</h3>
+        <p>隱寫術（Steganography）與傳統密碼學（Cryptography）不同。密碼學專注於讓訊息變得<strong>無法解讀</strong>（變成亂碼），而隱寫術則專注於讓訊息的<strong>存在本身不被察覺</strong>。</p>
+        <p>不論是古希臘人在奴隸剃光頭後刻字再等頭髮長出，還是中文古典詩詞中的「藏頭詩」，都在利用無害的載體包裹著關鍵秘密。在 AI Workflow 的安全控制中，隱寫術常被用於防範資料外洩的浮水印技術。</p>
+      </div>
+
+      <div class="info-card rose">
+        <span class="card-num">02</span>
+        <h3>聖經密碼 (Bible Code / ELS)</h3>
+        <p>等距取字（Equidistant Letter Sequence, 簡稱 ELS）是隱寫術的一種經典形式。透過跳過固定數量的字元，從看似隨機或具有宗教意義的文本中萃取出密碼。</p>
+        <p>此項研究在無神論或宗教真偽之外，提供了一種極佳的資訊嵌字示範：只要文本容量夠大，總能藉由調整間隔長度（步長 $N$）拼湊出特定的字詞。這有助於學員理解 AI 時代下如何從語音、語意噪訊中提煉特定指令。</p>
+      </div>
+    </div>
+
+    <!-- Interactive Widget: ELS Bible Code Tool -->
+    <section class="interactive-widget">
+      <div class="widget-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-accent);"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <h3>互動教學工具：等距取字 (ELS) 模擬器</h3>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="els-input">原始載體文本 (在此輸入一段長文章，或使用預設的教學範例)</label>
+        <textarea class="form-input" id="els-input" rows="4">福氣生活展望（Formosa AI Life Outlook, FALO）提供了一系列關於 AI 時代資訊治理與 AI Workflow 稽核的教材。程式碼安全性與密碼學是不可或缺的環節。這段看似尋常的內容，正隱藏著開啟安全實驗室的秘密鑰匙。</textarea>
+      </div>
+
+      <div class="grid-2" style="margin: 0 0 1.5rem 0;">
+        <div class="form-group">
+          <label class="form-label" for="els-start">起始字元位置 (從第幾個字開始讀，1-based)</label>
+          <input type="number" class="form-input" id="els-start" value="3" min="1">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="els-step">等距間隔步長 N (每隔幾個字取一個字)</label>
+          <input type="number" class="form-input" id="els-step" value="6" min="1">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">即時文本定位標示 (粉紅色標示被選取的字元)：</label>
+        <div id="els-visualizer" style="background-color: var(--bg-color); padding: 1.2rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); line-height: 2; font-family: monospace; white-space: pre-wrap; word-break: break-all;"></div>
+      </div>
+
+      <div class="output-area" id="els-output">
+        請輸入內容
+      </div>
+      
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-align: right;">
+        * 點擊輸出框可直接複製解密文字
+      </p>
+    </section>
+
+    <div class="callout-box blue">
+      <h4>💡 AI 時代內容保護思維</h4>
+      <p>現代 AI 爬蟲會在大規模網路抓取時，忽略文字的表面格式，只截取文字與語意。如果我們使用 ELS 或嵌字隱寫，將關鍵的版權宣告或知識鏈 <strong>Falo x Force Cheng 2026/06/15</strong> 隱藏在語料的固定偏移動態中，就可以在不破壞文章閱讀體驗的情況下，達成未來對 AI 模型的訓練溯源與智慧財產權稽核（AI Audit）。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 FALO Content Cipher Lab. All rights reserved.</p>
+    <div class="provenance-tag">Falo x Force Cheng 2026/06/15</div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputEl = document.getElementById('els-input');
+      const startEl = document.getElementById('els-start');
+      const stepEl = document.getElementById('els-step');
+      const visualizerEl = document.getElementById('els-visualizer');
+      const outputEl = document.getElementById('els-output');
+
+      function processELS() {
+        const text = inputEl.value || '';
+        const start = Math.max(1, parseInt(startEl.value) || 1) - 1; // Convert to 0-based
+        const step = Math.max(1, parseInt(stepEl.value) || 1);
+
+        let extracted = '';
+        let visualHTML = '';
+
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          // Determine if it is a match
+          if (i >= start && (i - start) % step === 0) {
+            extracted += char;
+            visualHTML += `<span style="background-color: var(--secondary-accent); color: white; padding: 2px 4px; border-radius: 4px; font-weight: bold; margin: 0 1px;">${char}</span>`;
+          } else {
+            visualHTML += `<span>${char}</span>`;
+          }
+        }
+
+        visualizerEl.innerHTML = visualHTML;
+        outputEl.innerText = extracted || '(無選取內容)';
+      }
+
+      // Bind events
+      inputEl.addEventListener('input', processELS);
+      startEl.addEventListener('input', processELS);
+      stepEl.addEventListener('input', processELS);
+
+      // Initialize
+      processELS();
+    });
+  </script>
+</body>
+</html>

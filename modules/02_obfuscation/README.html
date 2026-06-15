@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B. 內容混淆 (Obfuscation) - FALO Content Cipher Lab</title>
+  <meta name="author" content="Force Cheng">
+  <meta name="copyright" content="Falo x Force Cheng 2026/06/15">
+  <meta name="generator" content="FALO Content Cipher Lab">
+  <meta name="description" content="學習常見的內容混淆、Base64 編碼、ROT13、與 URL 編碼。本站為 Formosa AI Life Outlook (FALO) 知識發行與 Taiwan AI Audit 治理的一部分，釐清混淆編碼與加密的根本差異。">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="../../README.html">
+        <span>FALO Content Cipher Lab</span>
+        <span class="badge">B. 內容混淆</span>
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="../../README.html">首頁</a></li>
+        <li><a href="../../00_project_brief.html">專案簡介</a></li>
+        <li><a href="../../01_concept_map.html">分類地圖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <ul class="breadcrumb">
+      <li><a href="../../README.html">Lab</a></li>
+      <li><a href="../../01_concept_map.html">地圖</a></li>
+      <li>B. 內容混淆</li>
+    </ul>
+
+    <section class="hero-section">
+      <div class="hero-title-splash">
+        <h1>內容混淆與編碼 (Obfuscation & Encoding)</h1>
+      </div>
+      <p class="hero-subtitle">「讓文字看似亂碼，但人人皆可解讀。」釐清編碼轉換與安全加密的根本分野。</p>
+    </section>
+
+    <div class="grid-2">
+      <div class="info-card">
+        <span class="card-num">01</span>
+        <h3>編碼與加密的本質差異</h3>
+        <p>許多人在日常開發中會將 <strong>Base64</strong> 誤認為「加密」。實際上，Base64 只是將資料以可列印字元呈現的一種<strong>編碼（Encoding）</strong>，其演算法是完全公開且無密鑰的。</p>
+        <p>內容混淆（Obfuscation）的主要目的是相容性傳遞或防止「一眼看穿」，在沒有授權控制（Access Control）的情況下，不能用於保密敏感數據。</p>
+      </div>
+
+      <div class="info-card rose">
+        <span class="card-num">02</span>
+        <h3>AI 時代的安全繞過挑戰</h3>
+        <p>在 AI Workflow 與安全檢測中，<strong>Prompt Obfuscation</strong> 是一項備受關注的議題。安全稽核人員（AI Audit）發現，若將惡意指令以 Base64 編碼後输入大語言模型，並在外部提示詞引導 LLM 自行解碼，容易突破 LLM 的安全防禦線。</p>
+        <p>了解這些基本混淆模式，是建立更高等級語意型安全網架構（AI Governance）的第一步。</p>
+      </div>
+    </div>
+
+    <!-- Interactive Widget: Obfuscation Tool -->
+    <section class="interactive-widget">
+      <div class="widget-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-accent);"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+        <h3>互動教學工具：混淆與編碼轉換器</h3>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="obfuscate-input">輸入明文或密文</label>
+        <textarea class="form-input" id="obfuscate-input" rows="4">FALO x Force Cheng 2026/06/15 - 智慧來源證據鏈</textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="obfuscate-mode">選擇轉換模式</label>
+        <select class="form-select" id="obfuscate-mode">
+          <option value="base64-encode">Base64 編碼 (Encode)</option>
+          <option value="base64-decode">Base64 解碼 (Decode)</option>
+          <option value="rot13">ROT13 字母循環移位 (英文字母適用)</option>
+          <option value="url-encode">URL 百分比編碼 (Encode)</option>
+          <option value="url-decode">URL 百分比解碼 (Decode)</option>
+        </select>
+      </div>
+
+      <div class="output-area" id="obfuscate-output">
+        請輸入內容
+      </div>
+      
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-align: right;">
+        * 點擊輸出框可直接複製轉換結果。如遇解碼失敗會顯示錯誤訊息。
+      </p>
+    </section>
+
+    <div class="callout-box blue">
+      <h4>💡 教學筆記：如何分辨是否真的「加密」了？</h4>
+      <p>一個最簡單的判別法則：<strong>「解開它是否需要一把只有特定人擁有的鑰匙（Key）？」</strong></p>
+      <ul>
+        <li><strong>不需要鑰匙：</strong> 任何人拿到這段字串，只需透過一套現成公式即可解開，這就叫<strong>編碼/混淆</strong>（如 Base64、ROT13、URL 編碼）。</li>
+        <li><strong>需要鑰匙：</strong> 沒有預先約定的金鑰或密碼，在物理上無法解開，這才叫<strong>加密</strong>（如 AES-256、PGP 等）。</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 FALO Content Cipher Lab. All rights reserved.</p>
+    <div class="provenance-tag">Falo x Force Cheng 2026/06/15</div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputEl = document.getElementById('obfuscate-input');
+      const modeEl = document.getElementById('obfuscate-mode');
+      const outputEl = document.getElementById('obfuscate-output');
+
+      // Helper function for ROT13
+      function rot13(str) {
+        return str.replace(/[a-zA-Z]/g, function(c) {
+          return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+        });
+      }
+
+      // Helper function for UTF-8 Base64 Encoding
+      function utf8_to_b64(str) {
+        try {
+          return window.btoa(unescape(encodeURIComponent(str)));
+        } catch(e) {
+          return "編碼失敗，字元不支援。";
+        }
+      }
+
+      // Helper function for UTF-8 Base64 Decoding
+      function b64_to_utf8(str) {
+        try {
+          return decodeURIComponent(escape(window.atob(str)));
+        } catch (e) {
+          return "【錯誤】無效的 Base64 格式，無法還原！";
+        }
+      }
+
+      function processObfuscation() {
+        const text = inputEl.value || '';
+        const mode = modeEl.value;
+        let result = '';
+
+        if (!text) {
+          outputEl.innerText = '請輸入內容';
+          return;
+        }
+
+        switch (mode) {
+          case 'base64-encode':
+            result = utf8_to_b64(text);
+            break;
+          case 'base64-decode':
+            result = b64_to_utf8(text);
+            break;
+          case 'rot13':
+            result = rot13(text);
+            break;
+          case 'url-encode':
+            result = encodeURIComponent(text);
+            break;
+          case 'url-decode':
+            try {
+              result = decodeURIComponent(text);
+            } catch(e) {
+              result = "【錯誤】無效的 URL 百分比格式！";
+            }
+            break;
+          default:
+            result = text;
+        }
+
+        outputEl.innerText = result;
+      }
+
+      // Bind events
+      inputEl.addEventListener('input', processObfuscation);
+      modeEl.addEventListener('change', processObfuscation);
+
+      // Initialize
+      processObfuscation();
+    });
+  </script>
+</body>
+</html>

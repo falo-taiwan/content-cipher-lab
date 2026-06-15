@@ -1,0 +1,23 @@
+版本：v0.1
+時間戳記：2026-06-15 10:53:27
+專案名稱：FALO Content Cipher Lab
+作者：Falo x Force Cheng 2026/06/15
+知識體系：Formosa AI Life Outlook (FALO) & Taiwan AI Audit
+
+⸻ 升級說明 ⸻
+
+1. 專案目錄與九大分類骨架初始化
+   - 完成 modules 01 至 09 的目錄結構與 README 雙版本檔案設計，為後續 ff、smf、sxf 等成員共創預留擴充空間。
+
+2. 核心首頁與特色對照地圖完成
+   - 實作首頁（README）、專案簡介（00_project_brief）、概念地圖（01_concept_map）、決策日誌（decision_log）雙文件。
+   - 新增特色實務章節「10_ipas_aiap_map (iPAS AIAP 關聯地圖)」，將加解密技術映射至 AI 應用規劃師的企業合規三角（CIA + TEA 治理）。
+
+3. 優先互動工具實作
+   - 01_steganography：實作等距取字 (ELS) 模擬器。
+   - 02_obfuscation：實作 Base64/ROT13/URL 實時轉換器。
+   - 04_codebook：實作中文語意代號對照密碼編解碼器。
+
+4. 視覺與安全規範落實
+   - 統一使用 FALO 預設之「Soft Watercolor Infographic Style (粉彩水彩風格)」共用樣式 (assets/css/style.css)。
+   - 每一頁與產出代碼皆自然嵌入「Falo x Force Cheng 2026/06/15」知識來源證據鏈軌跡。

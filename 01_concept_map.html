@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>知識分類地圖 (Concept Map) - FALO Content Cipher Lab</title>
+  <meta name="author" content="Force Cheng">
+  <meta name="copyright" content="Falo x Force Cheng 2026/06/15">
+  <meta name="generator" content="FALO Content Cipher Lab">
+  <meta name="description" content="瀏覽 FALO Content Cipher Lab 的核心知識地圖與分類全景 (Taxonomy)。本專案隸屬 Formosa AI Life Outlook (FALO) 與 Taiwan AI Audit 知識庫，解構內容加密、混淆與 AI 安全之間的演進脈絡。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Specific styles for the interactive concept map nodes */
+    .map-node circle {
+      filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.05));
+    }
+    .map-node:hover circle {
+      filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.1));
+    }
+    .node-title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .node-subtitle {
+      font-size: 11px;
+      fill: var(--text-muted);
+    }
+    .details-box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--border-card);
+      border: 1px solid rgba(136, 178, 156, 0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      margin-top: 1.5rem;
+      min-height: 120px;
+      transition: var(--transition-smooth);
+    }
+    .details-box.empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    /* Simple floating animation for nodes */
+    @keyframes floatNode {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0px); }
+    }
+    .floating-group {
+      animation: floatNode 6s ease-in-out infinite;
+    }
+    .floating-group:nth-child(2n) {
+      animation-delay: 1.5s;
+    }
+    .floating-group:nth-child(3n) {
+      animation-delay: 3s;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="README.html">
+        <span>FALO Content Cipher Lab</span>
+        <span class="badge">分類地圖</span>
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="README.html">首頁</a></li>
+        <li><a href="00_project_brief.html">專案簡介</a></li>
+        <li><a href="01_concept_map.html" class="active">分類地圖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <ul class="breadcrumb">
+      <li><a href="README.html">Lab</a></li>
+      <li>分類地圖</li>
+    </ul>
+
+    <section class="hero-section">
+      <div class="hero-title-splash">
+        <h1>知識分類地圖</h1>
+      </div>
+      <p class="hero-subtitle">點擊或觸碰地圖中的圓圈節點，了解各模組的防衛維度與跳轉通道。</p>
+    </section>
+
+    <!-- Search/Highlight Filter -->
+    <div class="interactive-widget" style="padding: 1.2rem; margin: 1rem 0; border-radius: 12px; display: flex; align-items: center; gap: 1rem;">
+      <label for="node-search" style="font-weight: bold; font-size: 0.95rem; white-space: nowrap;">🔍 搜尋關鍵字：</label>
+      <input type="text" id="node-search" class="form-input" placeholder="例如：Base64、聖經密碼、AES、浮水印..." style="margin: 0; padding: 0.5rem 1rem;">
+    </div>
+
+    <!-- Map Canvas Container -->
+    <div class="map-canvas-container">
+      <svg class="map-svg" viewBox="0 0 1000 600">
+        <!-- Background grid/signatures -->
+        <text x="820" y="580" fill="rgba(44, 53, 57, 0.15)" font-size="12" font-weight="bold">Falo x Force Cheng 2026/06/15</text>
+        <text x="30" y="40" fill="rgba(44, 53, 57, 0.1)" font-size="14" font-style="italic">Formosa AI Life Outlook (FALO)</text>
+
+        <!-- Connecting Lines -->
+        <g stroke="rgba(0,0,0,0.06)" stroke-width="2">
+          <!-- Steganography connections -->
+          <line x1="200" y1="180" x2="350" y2="100" />
+          <line x1="200" y1="180" x2="200" y2="330" />
+          <line x1="200" y1="180" x2="350" y2="260" />
+          
+          <!-- Obfuscation connections -->
+          <line x1="350" y1="100" x2="500" y2="180" />
+          
+          <!-- Codebook connections -->
+          <line x1="200" y1="330" x2="350" y2="420" />
+          
+          <!-- Classical Cipher connections -->
+          <line x1="350" y1="260" x2="500" y2="180" />
+          <line x1="350" y1="260" x2="500" y2="330" />
+          
+          <!-- Modern Encryption connections -->
+          <line x1="500" y1="180" x2="650" y2="260" />
+          
+          <!-- Hash connections -->
+          <line x1="500" y1="330" x2="650" y2="260" />
+          <line x1="500" y1="330" x2="650" y2="420" />
+          
+          <!-- Watermark connections -->
+          <line x1="650" y1="260" x2="800" y2="180" />
+          
+          <!-- AI Security connections -->
+          <line x1="800" y1="180" x2="800" y2="330" />
+          
+          <!-- Agent Comm connections -->
+          <line x1="800" y1="330" x2="650" y2="420" />
+
+          <!-- iPAS AIAP Map connections -->
+          <line x1="200" y1="330" x2="500" y2="480" />
+          <line x1="500" y1="330" x2="500" y2="480" />
+          <line x1="800" y1="330" x2="500" y2="480" />
+        </g>
+
+        <!-- Nodes Group -->
+        <!-- Group 1: Green Accent (Steganography, Obfuscation, Codebook) -->
+        <g class="floating-group">
+          <!-- A. Steganography -->
+          <g class="map-node" id="node-steganography" transform="translate(200, 180)" data-title="A. 內容隱藏 (Steganography)" data-desc="專注於隱藏『訊息存在本身』。包含藏頭詩、等距取字 (ELS)、媒體二進位隱寫術 (LSB, EXIF) 等技術。" data-link="modules/01_steganography/README.html" data-keywords="steganography 內容隱藏 藏頭詩 藏尾詩 聖經密碼 els 圖片藏字 png jpg EXIF metadata qr">
+            <circle r="20" fill="#EBF2EE" stroke="#88B29C" stroke-width="3" />
+            <text dx="-12" dy="5" font-weight="bold" fill="#38604C">A</text>
+            <text dx="30" dy="5" class="node-title">內容隱藏</text>
+          </g>
+        </g>
+
+        <g class="floating-group" style="animation-delay: 2s;">
+          <!-- B. Obfuscation -->
+          <g class="map-node" id="node-obfuscation" transform="translate(350, 100)" data-title="B. 內容混淆 (Obfuscation)" data-desc="不使用金鑰的可逆編碼技術。將明文以特殊格式呈現（如 Base64、ROT13、URL 編碼），規避靜態文字過濾網。" data-link="modules/02_obfuscation/README.html" data-keywords="obfuscation 內容混淆 base64 rot13 url unicode html entity emoji">
+            <circle r="20" fill="#EBF2EE" stroke="#88B29C" stroke-width="3" />
+            <text dx="-12" dy="5" font-weight="bold" fill="#38604C">B</text>
+            <text dx="30" dy="5" class="node-title">內容混淆</text>
+          </g>
+        </g>
+
+        <g class="floating-group" style="animation-delay: 4s;">
+          <!-- D. Codebook -->
+          <g class="map-node" id="node-codebook" transform="translate(200, 330)" data-title="D. 密碼書系統 (Codebook)" data-desc="在語意或詞彙級別進行替換。通訊雙方必須共享一本相同的密碼書，透過無意義的代號或數字傳遞機密。" data-link="modules/04_codebook/README.html" data-keywords="codebook 密碼書 軍事密碼書 國共戰爭 外交密碼書 一次性密碼本 otp">
+            <circle r="20" fill="#EBF2EE" stroke="#88B29C" stroke-width="3" />
+            <text dx="-12" dy="5" font-weight="bold" fill="#38604C">D</text>
+            <text dx="30" dy="5" class="node-title">密碼書系統</text>
+          </g>
+        </g>
+
+        <!-- Group 2: Rose Accent (Classical Cipher, Modern Encryption, Hash) -->
+        <g class="floating-group" style="animation-delay: 1s;">
+          <!-- C. Classical Cipher -->
+          <g class="map-node" id="node-classical" transform="translate(350, 260)" data-title="C. 古典密碼 (Classical Cipher)" data-desc="【骨架模組】紙筆級別的替代與位移演算法。包含凱撒密碼 Caesar、維吉尼亞密碼 Vigenère 與柵欄密碼 Rail Fence。" data-link="modules/03_classical_cipher/README.html" data-keywords="classical cipher 古典密碼 caesar vigenere atbash rail fence polybius playfair">
+            <circle r="20" fill="#FAF0F1" stroke="#D4A3A9" stroke-width="3" />
+            <text dx="-12" dy="5" font-weight="bold" fill="#8F5B62">C</text>
+            <text dx="30" dy="5" class="node-title">古典密碼</text>
+          </g>
+        </g>
+
+        <g class="floating-group" style="animation-delay: 3s;">
+          <!-- E. Encryption -->
+          <g class="map-node" id="node-encryption" transform="translate(500, 180)" data-title="E. 現代加密 (Encryption)" data-desc="【骨架模組】依賴嚴密數學結構與秘密金鑰。包含適用於大檔案高速傳輸的對稱加密 AES，及非對稱加密 RSA/ECC。" data-link="modules/05_encryption/README.html" data-keywords="encryption 現代加密 aes rsa ecc tls https zip password pdf password">
+            <circle r="20" fill="#FAF0F1" stroke="#D4A3A9" stroke-width="3" />
+            <text dx="-10" dy="5" font-weight="bold" fill="#8F5B62">E</text>
+            <text dx="30" dy="5" class="node-title">現代加密</text>
+          </g>
+        </g>
+
+        <g class="floating-group" style="animation-delay: 5s;">
+          <!-- F. Hash -->
+          <g class="map-node" id="node-hash" transform="translate(500, 330)" data-title="F. 驗證與雜湊 (Hash)" data-desc="【骨架模組】單向、不可逆的資料指紋算法。如 MD5, SHA-256。主要用於完整性驗證，強調雜湊並不等於加密。" data-link="modules/06_hash/README.html" data-keywords="hash 雜湊 驗證 md5 sha1 sha256 sha512 checksum">
+            <circle r="20" fill="#FAF0F1" stroke="#D4A3A9" stroke-width="3" />
+            <text dx="-10" dy="5" font-weight="bold" fill="#8F5B62">F</text>
+            <text dx="30" dy="5" class="node-title">驗證與雜湊</text>
+          </g>
+        </g>
+
+        <!-- Group 3: Blue Accent (Watermark, AI Security, Agent Comm) -->
+        <g class="floating-group" style="animation-delay: 1.5s;">
+          <!-- G. Watermark -->
+          <g class="map-node" id="node-watermark" transform="translate(650, 260)" data-title="G. 數位浮水印 (Watermark)" data-desc="【骨架模組】嵌入版權標誌與溯源特徵。包含 Visible/Invisible 浮水印、EXIF 屬性標記、與防範 Deepfake 的 AI 浮水印。" data-link="modules/07_watermark/README.html" data-keywords="watermark 數位浮水印 圖片浮水印 隱藏浮水印 metadata watermark ai watermark copyright mark">
+            <circle r="20" fill="#EFF5F8" stroke="#A1C4D4" stroke-width="3" />
+            <text dx="-12" dy="5" font-weight="bold" fill="#4E7B91">G</text>
+            <text dx="30" dy="5" class="node-title">數位浮水印</text>
+          </g>
+        </g>
+
+        <g class="floating-group" style="animation-delay: 3.5s;">
+          <!-- H. AI Content Security -->
+          <g class="map-node" id="node-aisecurity" transform="translate(800, 180)" data-title="H. AI Content Security" data-desc="【骨架模組】AI 時代的提示詞工程安全。包含對抗 Prompt Injection 的提示詞混淆編碼、及檢索防護 RAG Data Protection。" data-link="modules/08_ai_security/README.html" data-keywords="ai content security prompt obfuscation prompt encoding prompt splitting rag data protection knowledge provenance">
+            <circle r="20" fill="#EFF5F8" stroke="#A1C4D4" stroke-width="3" />
+            <text dx="-12" dy="5" font-weight="bold" fill="#4E7B91">H</text>
+            <text dx="30" dy="5" class="node-title">AI 安全</text>
+          </g>
+        </g>
+
+        <g class="floating-group" style="animation-delay: 5.5s;">
+          <!-- I. Agent Comm -->
+          <g class="map-node" id="node-agentcomm" transform="translate(800, 330)" data-title="I. AI Agent Secret Communication" data-desc="【骨架模組】探討 Agent 之間使用後台 Metadata 欄位傳遞隱藏指令，建構多智能體工作流中的安全稽核通道。" data-link="modules/09_ai_agent_comm/README.html" data-keywords="ai agent secret communication hidden instruction agent message mcp metadata multi agent secret channel ai native cipher">
+            <circle r="20" fill="#EFF5F8" stroke="#A1C4D4" stroke-width="3" />
+            <text dx="-10" dy="5" font-weight="bold" fill="#4E7B91">I</text>
+            <text dx="30" dy="5" class="node-title">Agent 通訊</text>
+          </g>
+        </g>
+
+        <!-- Feature Group: Gold Accent (iPAS AIAP Map) -->
+        <g class="floating-group" style="animation-delay: 2.5s;">
+          <!-- iPAS AIAP -->
+          <g class="map-node" id="node-ipas-aiap" transform="translate(500, 480)" data-title="💡 特色專題：iPAS AIAP 關聯對照" data-desc="專屬對照章節：解構資訊防護、密碼學應用與 AI 應用規劃師 (AIAP) 職能的關係。協助理解企業 AI 工作流的數據安全治理與稽核規範。" data-link="10_ipas_aiap_map.html" data-keywords="ipas aiap 規劃師 治理 audit governance security data lifecycle cia tea">
+            <circle r="20" fill="#FCFBF9" stroke="var(--accent-gold)" stroke-width="3" />
+            <text dx="-10" dy="5" font-weight="bold" fill="var(--text-main)">★</text>
+            <text dx="30" dy="5" class="node-title" style="fill:#8F5B62; font-weight: bold;">iPAS AIAP 對照</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Active Details Card -->
+    <div id="details-card" class="details-box empty">
+      請點擊地圖中的任何節點以查看其詳細資訊與導覽連結。
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 FALO Content Cipher Lab. All rights reserved.</p>
+    <div class="provenance-tag">Falo x Force Cheng 2026/06/15</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nodes = document.querySelectorAll('.map-node');
+      const detailsCard = document.getElementById('details-card');
+      const searchInput = document.getElementById('node-search');
+
+      // Click to view node details
+      nodes.forEach(node => {
+        node.addEventListener('click', () => {
+          // Reset highlights
+          nodes.forEach(n => n.querySelector('circle').style.fill = '');
+          
+          // Highlight selected node
+          const circle = node.querySelector('circle');
+          circle.style.fill = 'var(--accent-gold)';
+
+          const title = node.getAttribute('data-title');
+          const desc = node.getAttribute('data-desc');
+          const link = node.getAttribute('data-link');
+
+          detailsCard.classList.remove('empty');
+          detailsCard.innerHTML = `
+            <h3 style="margin-top:0; color: #2C3539;">${title}</h3>
+            <p>${desc}</p>
+            <div style="margin-top: 1rem;">
+              <a href="${link}" class="btn" style="font-size: 0.9rem; padding: 0.5rem 1.2rem;">前往該模組教材 ➔</a>
+            </div>
+          `;
+        });
+      });
+
+      // Filter search
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase().trim();
+        if (!query) {
+          nodes.forEach(n => {
+            n.style.opacity = '1';
+            n.querySelector('circle').style.strokeWidth = '3';
+          });
+          return;
+        }
+
+        nodes.forEach(n => {
+          const keywords = n.getAttribute('data-keywords').toLowerCase();
+          const title = n.getAttribute('data-title').toLowerCase();
+          
+          if (keywords.includes(query) || title.includes(query)) {
+            n.style.opacity = '1';
+            n.querySelector('circle').style.strokeWidth = '5'; // Make matching thicker
+          } else {
+            n.style.opacity = '0.25';
+            n.querySelector('circle').style.strokeWidth = '3';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

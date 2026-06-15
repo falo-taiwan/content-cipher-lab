@@ -1,0 +1,13 @@
+# FALO Content Cipher Lab Git Ignore
+# Falo x Force Cheng 2026/06/15
+
+# Exclude compiled backup archives
+backup/*.zip
+
+# OS temporary files
+.DS_Store
+Thumbs.db
+
+# IDE configuration folders
+.vscode/
+.idea/

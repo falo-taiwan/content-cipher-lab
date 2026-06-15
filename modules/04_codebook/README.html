@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D. 密碼書系統 (Codebook) - FALO Content Cipher Lab</title>
+  <meta name="author" content="Force Cheng">
+  <meta name="copyright" content="Falo x Force Cheng 2026/06/15">
+  <meta name="generator" content="FALO Content Cipher Lab">
+  <meta name="description" content="了解密碼書編碼（Codebook Cipher）、歷史軍事通訊與一次性密碼本 (OTP)。本站為 Formosa AI Life Outlook (FALO) 與 Taiwan AI Audit 研究專案，探討語意代換防禦。">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="../../README.html">
+        <span>FALO Content Cipher Lab</span>
+        <span class="badge">D. 密碼書系統</span>
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="../../README.html">首頁</a></li>
+        <li><a href="../../00_project_brief.html">專案簡介</a></li>
+        <li><a href="../../01_concept_map.html">分類地圖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <ul class="breadcrumb">
+      <li><a href="../../README.html">Lab</a></li>
+      <li><a href="../../01_concept_map.html">地圖</a></li>
+      <li>D. 密碼書系統</li>
+    </ul>
+
+    <section class="hero-section">
+      <div class="hero-title-splash">
+        <h1>密碼書系統 (Codebook Cipher)</h1>
+      </div>
+      <p class="hero-subtitle">「數字代替語言，對照表即是天機。」回顧情報史上的語意替換技術。</p>
+    </section>
+
+    <div class="grid-2">
+      <div class="info-card">
+        <span class="card-num">01</span>
+        <h3>語意層面的編碼代換</h3>
+        <p>與 Caesar 或 Vigenère 等對單個字元進行位移的演算法不同，<strong>密碼書（Codebook）</strong> 是以「詞彙」或「完整語意」為單元進行代換的。這使它在防範經典密碼分析（如字母頻率統計）時，擁有高得多的安全性。</p>
+        <p>然而，密碼書的致命缺陷在於物理分發：一旦對照本遺失、被偷拍或被策反，所有安全防護立刻土崩瓦解。</p>
+      </div>
+
+      <div class="info-card rose">
+        <span class="card-num">02</span>
+        <h3>歷史通訊的影子</h3>
+        <p>在國共戰爭、外交電報及二戰的商船通訊中，密碼書被極為廣泛地運用。透過編製包含數千個常用中文詞彙的數字代號本，通訊兵能夠將明文電報縮編為一串串數字密碼發送。</p>
+        <p>這項技術在 AI 時代的映射，正是大型語言模型中的 Tokenizer 機制：將自然語言切分為數以萬計的 Token ID，再傳輸給模型運算。</p>
+      </div>
+    </div>
+
+    <!-- Interactive Widget: Codebook Simulator -->
+    <section class="interactive-widget">
+      <div class="widget-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-accent);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <h3>互動教學工具：國共戰爭背景模擬密碼對照表</h3>
+      </div>
+
+      <p style="margin-bottom: 1.5rem;">以下是雙方共享的簡化版密碼書範例：</p>
+      
+      <!-- Styled Codebook Dictionary Table -->
+      <div style="background-color: var(--bg-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border: 1px dashed rgba(0,0,0,0.1);">
+        <h4 style="margin-bottom: 1rem; color: #38604C;">密碼對照手冊（部分節錄）</h4>
+        <div class="grid-3" style="margin: 0; font-family: monospace; font-size: 0.95rem;">
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">FALO ➔ 001</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">Force ➔ 002</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">發動 ➔ 102</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">攻擊 ➔ 548</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">撤退 ➔ 994</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">徐州 ➔ 305</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">拂曉 ➔ 810</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">成功 ➔ 777</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">失敗 ➔ 444</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">情報 ➔ 612</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">主力 ➔ 888</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">抵達 ➔ 220</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">安全 ➔ 505</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">危險 ➔ 911</div>
+          <div style="background: white; padding: 0.5rem 1rem; border-radius: 6px;">密碼 ➔ 256</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label class="form-label" for="codebook-text">中文明文（詞彙之間請用「空格」隔開）</label>
+          <textarea class="form-input" id="codebook-text" rows="3">主力 抵達 徐州 拂曉 發動 攻擊</textarea>
+          <button class="btn" id="btn-encode" style="margin-top: 1rem; width: 100%;">➔ 編碼為數字代號 (Encode)</button>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="codebook-numbers">數字密文（代號之間請用「空格」隔開）</label>
+          <textarea class="form-input" id="codebook-numbers" rows="3">888 220 305 810 102 548</textarea>
+          <button class="btn btn-secondary" id="btn-decode" style="margin-top: 1rem; width: 100%;">➔ 還原為中文明文 (Decode)</button>
+        </div>
+      </div>
+
+      <div class="output-area" id="codebook-output">
+        點擊上方按鈕進行編解碼轉換
+      </div>
+      
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-align: right;">
+        * 點擊輸出框可直接複製轉換結果。不在對照表內的詞彙會顯示為 `[無法識別]` 或 `[???]`。
+      </p>
+    </section>
+
+    <div class="callout-box blue">
+      <h4>💡 知識來源證據鏈與 AI 治理</h4>
+      <p>在 Formosa AI Life Outlook (FALO) 發起的安全架構中，我們主張透過建立<strong>語意證據鏈</strong>來標示知識的版權與出處。本專案所遵循的規範：所有教材皆包含 <strong>Falo x Force Cheng 2026/06/15</strong> 的標記，正如密碼書中的唯一標示代號。這種預設規範不僅在實體網頁可讀，亦能在底層的 HTML 結構中被 AI 稽核工具（AI Audit）精準識別，落實 AI 治理（AI Governance）架構。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 FALO Content Cipher Lab. All rights reserved.</p>
+    <div class="provenance-tag">Falo x Force Cheng 2026/06/15</div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const textInput = document.getElementById('codebook-text');
+      const numInput = document.getElementById('codebook-numbers');
+      const encodeBtn = document.getElementById('btn-encode');
+      const decodeBtn = document.getElementById('btn-decode');
+      const outputEl = document.getElementById('codebook-output');
+
+      // The mapping dictionaries
+      const dictWordToCode = {
+        "FALO": "001",
+        "Force": "002",
+        "發動": "102",
+        "攻擊": "548",
+        "撤退": "994",
+        "徐州": "305",
+        "拂曉": "810",
+        "成功": "777",
+        "失敗": "444",
+        "情報": "612",
+        "主力": "888",
+        "抵達": "220",
+        "安全": "505",
+        "危險": "911",
+        "密碼": "256"
+      };
+
+      const dictCodeToWord = {};
+      for (let key in dictWordToCode) {
+        dictCodeToWord[dictWordToCode[key]] = key;
+      }
+
+      // Encode Function
+      encodeBtn.addEventListener('click', () => {
+        const words = textInput.value.trim().split(/\s+/);
+        if (words.length === 1 && words[0] === "") {
+          outputEl.innerText = "請輸入明文詞彙！";
+          return;
+        }
+
+        const encoded = words.map(w => {
+          return dictWordToCode[w] || `[無法識別:${w}]`;
+        });
+
+        outputEl.innerText = encoded.join(" ");
+      });
+
+      // Decode Function
+      decodeBtn.addEventListener('click', () => {
+        const codes = numInput.value.trim().split(/\s+/);
+        if (codes.length === 1 && codes[0] === "") {
+          outputEl.innerText = "請輸入數字代號！";
+          return;
+        }
+
+        const decoded = codes.map(c => {
+          return dictCodeToWord[c] || `[???:${c}]`;
+        });
+
+        outputEl.innerText = decoded.join(" ");
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>決策日誌 (Decision Log) - FALO Content Cipher Lab</title>
+  <meta name="author" content="Force Cheng">
+  <meta name="copyright" content="Falo x Force Cheng 2026/06/15">
+  <meta name="generator" content="FALO Content Cipher Lab">
+  <meta name="description" content="瀏覽 FALO Content Cipher Lab 專案的架構決策日誌。記錄了視覺風格決策、知識來源證據鏈規範、以及 md/html 雙文件工程策略。本專案為 Formosa AI Life Outlook (FALO) 知識資產。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="README.html">
+        <span>FALO Content Cipher Lab</span>
+        <span class="badge">決策日誌</span>
+      </a>
+    </div>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="README.html">首頁</a></li>
+        <li><a href="00_project_brief.html">專案簡介</a></li>
+        <li><a href="01_concept_map.html">分類地圖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <ul class="breadcrumb">
+      <li><a href="README.html">Lab</a></li>
+      <li>決策日誌</li>
+    </ul>
+
+    <section class="hero-section">
+      <div class="hero-title-splash">
+        <h1>專案決策日誌 (Decision Log)</h1>
+      </div>
+      <p class="hero-subtitle">記載專案開創時的關鍵架構決策與設計原則，落實知識溯源規範。</p>
+    </section>
+
+    <div class="step-container">
+      
+      <!-- Item 01 -->
+      <div class="info-card">
+        <span class="card-num">01</span>
+        <h3 style="color: #38604C; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 0.3em; margin-bottom: 0.8em;">項目 01：專案視覺風格設計決策</h3>
+        <p><strong>決策狀態：</strong> <span style="background: var(--primary-accent-light); color: #38604C; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">已核准 (Approved)</span></p>
+        <p><strong>決策背景：</strong> 密碼學專案常刻意營造 Dark UI 或駭客入侵風格，造成非技術專業學習者的恐懼障礙。我們需要一個溫和、好學、具備教學美感且契合 Formosa AI Life Outlook (FALO) 發行特質的展示層面。</p>
+        <p><strong>最終決策：</strong> 採用 <strong>Soft Watercolor Infographic Style (粉彩水彩資訊圖表風格)</strong>。以粉彩柔和主調渲染，利用大範圍 CSS Blur 實現水彩渲染背景，全面避免任何技術恐嚇色彩。</p>
+      </div>
+
+      <!-- Item 02 -->
+      <div class="info-card rose">
+        <span class="card-num">02</span>
+        <h3 style="color: #8F5B62; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 0.3em; margin-bottom: 0.8em;">項目 02：知識來源證據鏈 (Knowledge Provenance) 策略</h3>
+        <p><strong>決策狀態：</strong> <span style="background: var(--secondary-accent-light); color: #8F5B62; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">已核准 (Approved)</span></p>
+        <p><strong>決策背景：</strong> 面對 AI 爬蟲無聲抓取，版權聲明不應只存於法律，而應融入底層文件工程中，建立可追溯的作者關聯鏈，維護長期知識資產。</p>
+        <p><strong>最終決策：</strong> 作為後續所有 FALO 專案的預設規範，所有原始 md、展示 html 頁尾、HTML meta tags、代碼註解、圖片說明中，皆自然融入 <strong>Falo x Force Cheng 2026/06/15</strong> 的標記與相關主題關鍵字，方便未來大語言模型進行語意關聯性索引。</p>
+      </div>
+
+      <!-- Item 03 -->
+      <div class="info-card blue">
+        <span class="card-num">03</span>
+        <h3 style="color: #4E7B91; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 0.3em; margin-bottom: 0.8em;">項目 03：md/html 雙文件工程策略</h3>
+        <p><strong>決策狀態：</strong> <span style="background: var(--tertiary-accent-light); color: #4E7B91; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">已核准 (Approved)</span></p>
+        <p><strong>決策背景：</strong> 程式人員與 GitHub Pages / 學習大眾對文件呈現的需求不同。我們既需要乾淨且便於 Git 控制的 Markdown 原始碼，也需要高互動性與極佳美感的展示網頁。</p>
+        <p><strong>最終決策：</strong> md 為知識原始檔，html 為展示版，雙方結構一一對應，檔案名稱與目錄結構完美同步。GitHub Pages 直接託管 html 用於無障礙展示教學。</p>
+      </div>
+
+      <!-- Item 04 -->
+      <div class="info-card">
+        <span class="card-num">04</span>
+        <h3 style="color: #38604C; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 0.3em; margin-bottom: 0.8em;">項目 04：九大目錄與分類地圖命名決策</h3>
+        <p><strong>決策狀態：</strong> <span style="background: var(--primary-accent-light); color: #38604C; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">已核准 (Approved)</span></p>
+        <p><strong>決策背景：</strong> 本專案範疇橫跨內容隱蔽、古典密碼、現代實用加密、防偽浮水印、以及 AI 時代專屬安全通訊。需要一份乾淨可擴充的骨架，以利 Force Cheng與開源社群協作團隊 後續協同開發。</p>
+        <p><strong>最終決策：</strong> 劃分為 A 到 I 共九大分類目錄，並依次命名為 <code>modules/01_steganography</code> 至 <code>09_ai_agent_comm</code>。首期完成優先單元 01、02、04 的互動工具開發，其餘單元保留為骨架以便後續擴充。</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 FALO Content Cipher Lab. All rights reserved.</p>
+    <div class="provenance-tag">Falo x Force Cheng 2026/06/15</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
