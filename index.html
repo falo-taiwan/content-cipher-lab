@@ -9,6 +9,89 @@
   <meta name="generator" content="FALO Content Cipher Lab">
   <meta name="description" content="FALO Content Cipher Lab (內容加密與內容混淆器研究專案)。本專案隸屬 Formosa AI Life Outlook (FALO) 與 Taiwan AI Audit 知識發行體系，展示日常通訊、檔案交換、與 AI 時代下的資訊治理、AI Workflow 與內容安全防禦。">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Specific styling for homepage 4-layer integration */
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .framework-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--border-card);
+      border: 1px solid rgba(136, 178, 156, 0.2);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+    .framework-card::after {
+      content: "➔";
+      position: absolute;
+      right: -1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary-accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+      z-index: 10;
+    }
+    .framework-card:last-child::after {
+      display: none;
+    }
+    .framework-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    }
+    .framework-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #38604C;
+    }
+    .framework-subtitle {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+    .styled-table th {
+      background-color: var(--primary-accent-light);
+      color: #38604C;
+      text-align: left;
+      padding: 1rem;
+      font-weight: bold;
+    }
+    .styled-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .styled-table tr:hover {
+      background-color: var(--bg-color);
+    }
+    @media (max-width: 768px) {
+      .framework-card::after {
+        content: "↓";
+        right: 50%;
+        bottom: -1.5rem;
+        top: auto;
+        transform: translateX(50%);
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +99,7 @@
     <div class="logo-area">
       <a href="README.html">
         <span>FALO Content Cipher Lab</span>
-        <span class="badge">首頁</span>
+        <span class="badge">首頁 v1.1</span>
       </a>
     </div>
     <nav>
@@ -33,40 +116,171 @@
       <div class="hero-title-splash">
         <h1>FALO Content Cipher Lab</h1>
       </div>
-      <p class="hero-subtitle">內容加密與內容混淆器研究教學專案</p>
+      <p class="hero-subtitle">內容加密與內容混淆器研究教學專案 (v1.1)</p>
       <div style="margin-top: 1.5rem;">
         <a href="00_project_brief.html" class="btn">進入專案簡介 ➔</a>
-        <a href="01_concept_map.html" class="btn btn-secondary" style="margin-left: 1rem;">查看知識地圖 ➔</a>
+        <a href="01_concept_map.html" class="btn btn-secondary" style="margin-left: 1rem;">查看分類地圖 ➔</a>
         <a href="10_ipas_aiap_map.html" class="btn btn-secondary" style="margin-left: 1rem; border-color: var(--secondary-accent); color: #8F5B62;">iPAS AIAP 關聯對照 ➔</a>
       </div>
     </section>
 
-    <!-- Main Description -->
+    <!-- Project Mission -->
     <div class="info-card" style="margin-bottom: 3rem;">
       <h3>🎯 專案宗旨</h3>
       <p>本專案用於整理、展示與教學各種「內容加密、內容混淆、隱寫術、密碼書」概念。我們關注的核心並非駭客攻擊或高深難懂的軍規密碼學推導，而是著重於<strong>日常生活、檔案傳輸以及 AI 時代下的資訊流保護</strong>。我們希望透過「快速、好懂、易操作」的互動教學，讓企業開發者、AI 工作流架構師以及一般大眾，都能建立數位防衛感，落實 AI 治理（AI Governance）。</p>
     </div>
 
-    <!-- Roles Grid -->
-    <h2 style="margin-bottom: 1rem;">👥 專案管理與維護</h2>
-    <div class="role-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
-      <div class="role-card">
-        <div class="role-avatar">FC</div>
-        <div class="role-title">Force Cheng</div>
-        <div class="role-subtitle">專案發起人</div>
-        <div class="role-desc">負責定義整體方向、指定技術清單，並注入關於 AI 稽核（AI Audit）、安全合規與可信任 AI 治理的決策觀點。</div>
+    <!-- 4 Layers Architecture Section -->
+    <h2 style="margin-bottom: 1rem;">🛡️ 企業合規與防護四層架構</h2>
+    <p>我們以四個遞進層次來解構內容安全防禦，幫助您快速理解資訊安全在實務中的落地方式：</p>
+    
+    <!-- 4 Layers Flowcards -->
+    <div class="framework-grid">
+      <div class="framework-card">
+        <div class="framework-subtitle">Why / 為何做</div>
+        <div class="framework-title">1. 合法合規趨勢</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">對照台灣人工智慧基本法、ISO 42001、ISO 27001 等合規標準。</p>
       </div>
-      
-      <div class="role-card rose">
-        <div class="role-avatar">FL</div>
-        <div class="role-title">FALO Community</div>
-        <div class="role-subtitle">開源協作與維護團隊</div>
-        <div class="role-desc">負責整體專案架構維護、雙文件工程優化、跨單元互動工具開發與展示設計。</div>
+
+      <div class="framework-card">
+        <div class="framework-subtitle">What / 懂什麼</div>
+        <div class="framework-title">2. 學術安全觀念</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">理解 CIA 安全三角、TEA 審計三角，釐清編碼/加密/雜湊的差異。</p>
+      </div>
+
+      <div class="framework-card">
+        <div class="framework-subtitle">How / 用在哪</div>
+        <div class="framework-title">3. 實務應用場景</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">解決雲端與異地備份安全、AI 通訊防洩密、Log 防竄改等台灣本土痛點。</p>
+      </div>
+
+      <div class="framework-card">
+        <div class="framework-subtitle">Tool / 怎麼做</div>
+        <div class="framework-title">4. 落地展示工具</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">提供免安裝網頁互動工具（ELS、Codebook、Base64），實現即時驗證。</p>
+      </div>
+    </div>
+
+    <!-- Layer 1: Trends -->
+    <h3>⚖️ 層次一：合法合規趨勢 (Legal & Compliance Trends)</h3>
+    <p>企業導入 AI 與雲端架構時，合規是最高指導原則。本專案技術點直接對照以下三大合規框架：</p>
+    <div class="grid-3">
+      <div class="info-card">
+        <span class="card-num">01</span>
+        <h4>台灣人工智慧基本法</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">法規核心在於「隱私保護」與「透明性」。企業必須保護敏感資料免於在未授權下送給 AI 訓練或分析。</p>
+      </div>
+      <div class="info-card rose">
+        <span class="card-num">02</span>
+        <h4>ISO 42001 (AIMS)</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">全球首個 AI 管理系統標準，要求嚴格的「數據治理（Data Governance）」與產出內容的可追溯性（Traceability）。</p>
+      </div>
+      <div class="info-card blue">
+        <span class="card-num">03</span>
+        <h4>ISO 27001 (ISMS)</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">國際資安標準，要求具備密碼學控制（Cryptography）、傳輸防護與機密備份安全（Backup Security）。</p>
+      </div>
+    </div>
+
+    <!-- Layer 2: Academic -->
+    <h3 style="margin-top: 3rem;">🎓 層次二：學術安全觀念 (Academic Theory)</h3>
+    <p>資安防護的核心觀念必須清晰，避免名詞混淆導致實作層面的安全漏洞：</p>
+    <div class="grid-2">
+      <div class="info-card">
+        <h4>1. 傳統資安三角 vs AI 審計三角</h4>
+        <p><strong>CIA 資安三角：</strong> 機密性 (Confidentiality) ➔ 完整性 (Integrity) ➔ 可用性 (Availability)</p>
+        <p><strong>TEA 審計三角：</strong> 可追溯性 (Traceability) ➔ 可解釋性 (Explainability) ➔ 問責制 (Accountability)</p>
+      </div>
+      <div class="info-card rose">
+        <h4>2. 技術防範定義釐清</h4>
+        <ul>
+          <li><strong>編碼與混淆：</strong> 無金鑰、公式公開、可逆。僅用於排版轉換（如 Base64）。</li>
+          <li><strong>加密：</strong> 必須使用秘密金鑰。無金鑰在物理上無法解鎖（如 AES-256）。</li>
+          <li><strong>雜湊：</strong> 單向、不可逆指紋。只能驗證完整性，無法解密還原（如 SHA-256）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Layer 3: Practical Scenarios Table -->
+    <h3 style="margin-top: 3rem;">💼 層次三：實務應用場景 (Practical Scenarios)</h3>
+    <p>結合台灣客戶最重視的備份防護、資料保全與 AI 通訊隱私痛點：</p>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>實務挑戰與痛點</th>
+          <th>合法合規對照</th>
+          <th>本站對應技術與實作解法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>雲端與異地備份安全</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">備份檔上傳雲端若漏設權限會外洩；或者備份中途被竄改損毀。</span>
+          </td>
+          <td>
+            ISO 27001 備份控制<br>
+            ISO 27001 密碼學控制
+          </td>
+          <td>
+            <strong>AES 對稱加密</strong> 確保備份檔在地端完成加密才送出；<br>
+            <strong>SHA-256 雜湊驗證</strong> 確保還原前備份檔未被竄改。
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>AI 雲端 API 通訊防洩密</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">員工直接將個資或源碼貼給 ChatGPT 違反《個資法》。</span>
+          </td>
+          <td>
+            台灣人工智慧基本法 (隱私保護)<br>
+            ISO 42001 數據輸入安全
+          </td>
+          <td>
+            強制 <strong>HTTPS/TLS 通道</strong> 防止側錄；<br>
+            在傳輸前使用 <strong>去識別化混淆與對照字典</strong> 遮蔽敏感詞彙。
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>稽核日誌防竄改與防外流</strong><br>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">特權管理員外洩個資後自行修改 Log 逃避責任；或者敏感報告外流。</span>
+          </td>
+          <td>
+            ISO 27001 安全日誌<br>
+            ISO 42001 可追溯性要求
+          </td>
+          <td>
+            利用 <strong>SHA-256 雜湊鏈</strong> 串接 Log 防止竄改；<br>
+            在產出物中嵌入包含 <strong>Knowledge Provenance</strong> 與下載者 ID 的隱形浮水印。
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Layer 4: Implementation -->
+    <h3 style="margin-top: 3rem;">🛠️ 層次四：落地展示工具 (Implementation)</h3>
+    <p>本專案規劃有多個不同的實驗工具。第一階段優先實作並突顯以下三個<strong>經典教學展示工具</strong>，用以對照與驗證完全不同的底層安全防禦原理：</p>
+    <div class="grid-3" style="margin-bottom: 3rem;">
+      <div class="info-card">
+        <h4>A. 內容隱藏</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">等距取字 (ELS) 模擬器。體驗內容隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。</p>
+        <a href="modules/01_steganography/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
+      </div>
+      <div class="info-card rose">
+        <h4>B. 內容混淆</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">實時 Base64/ROT13/URL 轉換器。體驗編碼轉換，突破「看不懂就是加密」的資安盲區。</p>
+        <a href="modules/02_obfuscation/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
+      </div>
+      <div class="info-card blue">
+        <h4>D. 密碼書系統</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">語意代號對照編解碼模擬器。理解 Token 映射在資訊傳遞中的安全性與侷限。</p>
+        <a href="modules/04_codebook/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
       </div>
     </div>
 
     <!-- Tree Explorer -->
-    <h2>📂 實驗室模組目錄導覽</h2>
+    <h2 style="margin-top: 4rem;">📂 實驗室模組目錄導覽</h2>
     <p>點擊下方文件夾，可直接跳轉至各知識分類的展示頁面：</p>
     
     <div class="interactive-widget">
@@ -83,6 +297,10 @@
 
         <div class="tree-node">
           📄 <a href="01_concept_map.html">01_concept_map.html</a> <span style="font-size: 0.8rem; color: var(--text-muted);">(視覺化知識關聯地圖)</span>
+        </div>
+
+        <div class="tree-node">
+          📄 <a href="10_ipas_aiap_map.html" style="font-weight: bold; color: #8F5B62;">10_ipas_aiap_map.html</a> <span style="font-size: 0.8rem; color: var(--text-muted);">(iPAS AIAP 關聯與企業合規對照圖)</span>
         </div>
 
         <div class="tree-node">
@@ -126,12 +344,26 @@
         </div>
 
         <div class="tree-node">
-          📄 <a href="10_ipas_aiap_map.html">10_ipas_aiap_map.html</a> <span style="font-size: 0.8rem; color: var(--text-muted);">(iPAS AIAP 關聯對照圖)</span>
-        </div>
-
-        <div class="tree-node">
           📄 <a href="decision_log.html">decision_log.html</a> <span style="font-size: 0.8rem; color: var(--text-muted);">(決策日誌與架構規則記錄)</span>
         </div>
+      </div>
+    </div>
+
+    <!-- Contributor Roles -->
+    <h2 style="margin-top: 4rem; margin-bottom: 1rem;">👥 專案管理與維護</h2>
+    <div class="role-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+      <div class="role-card">
+        <div class="role-avatar">FC</div>
+        <div class="role-title">Force Cheng</div>
+        <div class="role-subtitle">專案發起人</div>
+        <div class="role-desc">負責定義整體方向、指定技術清單，並注入關於 AI 稽核（AI Audit）、安全合規與可信任 AI 治理的決策觀點。</div>
+      </div>
+      
+      <div class="role-card rose">
+        <div class="role-avatar">FL</div>
+        <div class="role-title">FALO Community</div>
+        <div class="role-subtitle">開源協作與維護團隊</div>
+        <div class="role-desc">負責整體專案架構維護、雙文件工程優化、跨單元互動工具開發與展示設計。</div>
       </div>
     </div>
   </main>

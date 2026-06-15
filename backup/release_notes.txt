@@ -1,23 +1,19 @@
-版本：v0.1
-時間戳記：2026-06-15 10:53:27
+版本：v1.1
+時間戳記：2026-06-15 11:17:12
 專案名稱：FALO Content Cipher Lab
 作者：Falo x Force Cheng 2026/06/15
 知識體系：Formosa AI Life Outlook (FALO) & Taiwan AI Audit
 
 ⸻ 升級說明 ⸻
 
-1. 專案目錄與九大分類骨架初始化
-   - 完成 modules 01 至 09 的目錄結構與 README 雙版本檔案設計，為後續 ff、smf、sxf 等成員共創預留擴充空間。
+1. 首頁核心架構改版 (重組為四層架構)
+   - 將「合規趨勢 ➔ 學術觀念 ➔ 實務應用 ➔ 落地工具」的四層安全防禦架構直接移至首頁 (README.md, README.html, index.html) 最顯眼的位置。
+   - 讓客戶、主管與訪客在進入專案首頁的第一時間，就能立即對照法規（台灣 AI 基本法、ISO 42001/27001）、資安觀念、以及雲端/異地備份實務痛點。
+   - 其他對照地圖與各別模組頁面，則作為細部延伸說明，大大提升了上課傳教、概念佈道與產品推銷的開場張力。
 
-2. 核心首頁與特色對照地圖完成
-   - 實作首頁（README）、專案簡介（00_project_brief）、概念地圖（01_concept_map）、決策日誌（decision_log）雙文件。
-   - 新增特色實務章節「10_ipas_aiap_map (iPAS AIAP 關聯地圖)」，將加解密技術映射至 AI 應用規劃師的企業合規三角（CIA + TEA 治理）。
+2. 全文去識別化與路徑相對化
+   - 移除了內部 AI 助手的專屬代號 (smf, sxf, aaa) 及其分工，改為更符合開源專案規章的「Force Cheng (專案發起人)」與「FALO 開源社群與協作團隊」。
+   - 全面將 `file:///Users/force/...` 本機絕對連結改寫為 GitHub 相對路徑。
 
-3. 優先互動工具實作
-   - 01_steganography：實作等距取字 (ELS) 模擬器。
-   - 02_obfuscation：實作 Base64/ROT13/URL 實時轉換器。
-   - 04_codebook：實作中文語意代號對照密碼編解碼器。
-
-4. 視覺與安全規範落實
-   - 統一使用 FALO 預設之「Soft Watercolor Infographic Style (粉彩水彩風格)」共用樣式 (assets/css/style.css)。
-   - 每一頁與產出代碼皆自然嵌入「Falo x Force Cheng 2026/06/15」知識來源證據鏈軌跡。
+3. 壓縮備份升級
+   - 打包 v1.1 版本備份 falo_cipher_lab_v1.1_20260615.zip。
