@@ -74,11 +74,13 @@
 
 ## 🛠️ 層次四：落地展示工具 (Implementation)
 
-本專案提供直觀、免安裝的網頁互動小工具，供學員與企業決策者即時驗證觀點：
+本專案規劃有多個不同的實驗工具。第一階段特別優先實作並突顯以下三個**經典教學展示工具**，用以對照與驗證完全不同的底層安全防禦原理：
 
-1. **[等距取字 (ELS) 模擬器](modules/01_steganography/README.md)** ➔ 體驗隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。
-2. **[混淆與編碼轉換器](modules/02_obfuscation/README.md)** ➔ 動手操作 Base64、ROT13 與 URL 實時轉換，釐清編碼與加密差異。
+1. **[等距取字 (ELS) 模擬器](modules/01_steganography/README.md)** ➔ 體驗內容隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。
+2. **[混淆與編碼轉換器](modules/02_obfuscation/README.md)** ➔ 體驗 Base64、ROT13 與 URL 實時轉換，突破「看不懂就是加密」的典型資安盲區。
 3. **[國共戰爭密碼書模擬器](modules/04_codebook/README.md)** ➔ 體驗語意代換機制，理解 Tokenizer 機制在數據傳遞中的角色。
+
+🔗 **完整導覽**：如欲瀏覽、操作專案中完整的九大模組工具鏈與後續開發計畫，請前往 [全景知識分類地圖](01_concept_map.md) 或 [實驗室首頁](README.md)。
 
 ---
 
