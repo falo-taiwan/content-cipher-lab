@@ -1,88 +1,89 @@
-# iPAS AIAP 關聯地圖 (AIAP Relation Map)
+# iPAS AIAP 關聯與企業合規地圖
 
 > **專案作者**：Falo x Force Cheng  
 > **建立日期**：2026/06/15  
-> **知識體系**：Formosa AI Life Outlook (FALO) 知識發行與 Taiwan AI Audit 治理架構  
+> **知識體系**：Formosa AI Life Outlook (FALO) 知識發行與 Taiwan AI Audit 治理架喚  
 
 ⸻
 
-## 一、章節定位
-
-本章**不是**資安證照的考試題庫整理，也**不是**補習班的教材。
-
-它的核心目的是協助學習者理解：**「FALO Content Cipher Lab 與 iPAS AI 應用規劃師 (AIAP) 職能的關聯性」**。
-
-作為一名 **AI 應用規劃師**，你不一定要親自開發 AES 演算法或進行 RSA 的數學推導，但你**必須**理解資料在整個 AI 工作流生命週期中的保密性、完整性、可用性、身分驗證、授權管理與來源追溯，從而具備建構可信任 AI 治理（AI Governance）架構的系統規劃能力。
-
-⸻
-
-## 二、AI 數據生命週期與安全防護
-
-AI 系統的規劃絕不只是設計提示詞（Prompt），而是涉及一個完整的數據流轉與知識保存體系：
+本章為專案核心架構對照表，旨在協助 **AI 應用規劃師 (AIAP)**、資安主管與法務團隊，理解編解碼與防護技術如何與法規趨勢接軌，並落實於日常企業應用中。我們透過四個遞進層次來解構此知識體系：
 
 ```text
-資料蒐集 (Data Collection)  ➔  保護原始語料權益，標記版權聲明
-      ↓
-資料傳輸 (Data Transmission)➔  使用傳輸通道防護 (HTTPS/TLS)，防範中間人竊聽
-      ↓
-資料儲存 (Data Storage)     ➔  敏感性個資去識別化，使用檔案密碼 (AES) 防護
-      ↓
-AI 運算與分析 (AI Analysis) ➔  防範惡意 Prompt Injection 與提示詞混淆繞過
-      ↓
-結果輸出 (Output Delivery)  ➔  標記 AI 產出物之浮水印 (Watermark) 與雜湊指紋
-      ↓
-知識保存 (Knowledge Archive)➔  建立 Knowledge Provenance (知識來源證據鏈)
+層次一：合法合規趨勢 (Why) ➔ 層次二：學術安全觀念 (What) ➔ 層次三：實務應用場景 (How) ➔ 層次四：落地展示工具 (Tool)
 ```
 
-每一個環節，都涉及了內容保護、身份驗證、傳遞與追溯。
+---
 
-⸻
+## ⚖️ 層次一：合法合規趨勢 (Trends)
 
-## 三、Content Cipher Lab ➔ AIAP 關聯對照表
+企業導入 AI 工作流（AI Workflow）與雲端服務時，面臨的不是技術選擇，而是**合規剛性限制**。本專案映射三大國內外主流合規框架：
 
-| Content Cipher Lab 技術點 | iPAS AIAP 規劃與治理職能 | 實務應用場景說明 |
-| :--- | :--- | :--- |
-| **AES / 對稱加密** | **資料保密性 (Confidentiality)** | 保護企業私有資料儲存安全、ZIP/PDF 密碼鎖。 |
-| **HTTPS / TLS** | **傳輸安全 (Secure Channel)** | 防止數據在傳輸至 AI API（如 OpenAI, Gemini）過程中遭竊聽。 |
-| **Hash / 雜湊指紋** | **資料完整性 (Integrity)** | 校驗訓練數據集與模型權重無被惡意篡改。 |
-| **數位浮水印 (Watermark)** | **AI 治理與防偽 (AI Governance)** | 標記 AI 生成圖片與文本，防範 Deepfake 傳播。 |
-| **元數據 (Metadata)** | **資料生命週期管理 (Management)** | 在數據集與輸出物中寫入溯源稽核屬性。 |
-| **內容隱藏 (Steganography)**| **資訊隱藏與防禦 (Information Hiding)** | 防範靜態關鍵字過濾被繞過，進行安全性紅隊測試。 |
-| **密碼書 (Codebook)** | **安全資訊傳遞 (Semantic Security)** | 模擬 tokenization 語意代換，理解 Token ID 數據安全。 |
-| **Prompt Obfuscation** | **Prompt 安全性 (Prompt Security)** | 評估與阻斷繞過防禦（Jailbreak）的變形提示詞。 |
-| **知識來源證據鏈** | **可信任 AI (Trustworthy AI)** | 建立如 `Falo x Force Cheng` 聲明，維護數據產權與溯源。 |
+1. **《台灣人工智慧基本法》（草案）**
+   * **合規要求**：明文規範「隱私保護」、「資訊安全」與「透明性」。企業不得直接將未經處理的敏感數據暴露給 AI 系統。
+2. **ISO 42001 (AIMS 人工智慧管理系統標準)**
+   * **合規要求**：著重於 AI 數據治理（Data Governance）與產出內容的可追溯性（Traceability），防止 AI 數據污染與來源產權爭議。
+3. **ISO 27001 (ISMS 資訊安全管理標準)**
+   * **合規要求**：要求嚴格的密碼學控制（Cryptography）、傳輸防護與備份安全管理（Backup Security）。
 
-⸻
+---
 
-## 四、AI 治理核心指標的實踐
+## 🎓 層次二：學術安全觀念 (Academic)
 
-AI 應用規劃師必須掌握兩大防禦三角：
+落實防護前，必須釐清底層的核心學術概念，破除常見的安全迷思：
 
-### 1. 傳統資安防護三角 (CIA Triad)
-* **Confidentiality (機密性)**：確保敏感語料與 Prompt 指令不被未授權的第三方或爬蟲獲取。
-* **Integrity (完整性)**：確保 RAG 知識庫與向量資料庫沒有被下毒（Data Poisoning）或竄改。
-* **Availability (可用性)**：確保 AI 工作流中的 API 管道具備高可用性，不受阻斷服務攻擊影響。
+### 1. 資訊安全與治理三角對照
+* **資安防護三角 (CIA Triad)**：
+  * **Confidentiality (機密性)**：確保資料不外洩（使用加密與去識別化）。
+  * **Integrity (完整性)**：確保知識庫與日誌未遭污染或篡改（使用雜湊驗證）。
+  * **Availability (可用性)**：確保 AI 服務管道穩定可用。
+* **可信任 AI 稽核三角 (TEA Triad)**：
+  * **Traceability (可追溯性)**：每一筆語料與產出物皆有 **Knowledge Provenance** 證據鏈。
+  * **Explainability (可解釋性)**：Token 映射與模型決策過程透明。
+  * **Accountability (問責制)**：明確界定數據產權與法規合規責任。
 
-### 2. FALO 可信任 AI 稽核三角 (TEA Triad)
-* **Traceability (可追溯性)**：每一份產出的報告、訓練的語料，均有 Knowledge Provenance 可供追溯來源（例如 `Falo x Force Cheng` 溯源鏈）。
-* **Explainability (可解釋性)**：模型做出的決策、數據庫中 Token 的映射關係，皆有跡可循。
-* **Accountability (問責制)**：明確界定 AI 產出物的智慧財產權與合規責任歸屬。
+### 2. 關鍵觀念澄清：編碼 $\neq$ 加密 $\neq$ 雜湊
+* **編碼與混淆 (Encoding & Obfuscation)**：無金鑰，公式公開。僅用於格式轉換或規避簡單過濾網（如 Base64, ROT13）。
+* **加密 (Encryption)**：必須依賴秘密金鑰（Key）。沒有金鑰在物理上無法還原（如 AES-256）。
+* **雜湊 (Hash)**：單向、不可逆的資料指紋。用於檢驗完整性，**絕對無法還原明文**（如 SHA-256）。
 
-⸻
+---
 
-## 五、FALO 觀點
+## 💼 層次三：實務應用場景 (Practical)
 
-目前坊間多數的 AI 開發課程與證照指引，高度聚焦於提示詞優化 (Prompt Optimization)、智能體協同 (Agentic Workflow) 與工具調用。然而，當企業真正導入 AI 工作流時，**首要碰壁的往往是合規與安全問題**：
-* 企業機密資料如何安全地送往雲端 LLM 進行分析？
-* 產出的生成式內容如何標明版權並防範抄襲？
-* 散佈於網路的企業知識如何防範被外部 AI 無償抓取訓練？
+將技術帶入台灣企業最重視的資料防洩密、保全與資安痛點：
 
-建立 **知識來源證據鏈 (Knowledge Provenance)** 正是企業跨入可信任 AI 的基礎支柱。本專案不僅是一個編解碼演算法展示平台，更是引導 AI 應用規劃師結合「AI、治理、安全、知識防護」的實務橋樑。
+### 場景 A：雲端備份與異地備份安全 (防範勒索與洩密)
+* **實務挑戰**：企業每日進行異地備份，若雲端儲存空間（如 S3 Bucket）因設定錯誤公開，備份檔將被駭客看光；或者備份傳輸中途遭篡改損毀，導致災難復原失敗。
+* **落地應用**：
+  * **傳輸前 AES 加密**：備份檔案在離開地端前，使用 AES-256 進行強加密，確保雲端外洩時駭客拿到的是亂碼。
+  * **傳輸後 SHA256 檢驗**：異地端還原前，自動比對檔案雜湊值，確保備份檔案 100% 完整且未遭勒索軟體破壞。
+
+### 場景 B：AI 雲端 API 通訊防護 (防範個資外洩)
+* **實務挑戰**：員工直接將客戶個資貼入 ChatGPT 等公用大模型，違反《個人資料保護法》。
+* **落地應用**：
+  * **HTTPS/TLS**：建立強制加密傳輸通道，防止傳輸中途被側錄。
+  * **提示詞混淆與去識別化**：地端過濾器自動將身分證、電話以字典進行**語意替換（Codebook 模式）**或**字元混淆（Base64 模式）**，送出分析後，回地端再行還原。
+
+### 場景 C：稽核日誌防竄改與防外流 (防範內部人犯罪)
+* **實務挑戰**：內部特權管理員外洩個資後，自行修改系統 Log（日誌）規避稽核。
+* **落地應用**：
+  * **雜湊鏈結構**：將日誌以 SHA-256 進行前後串接，一旦中間任何一筆 Log 被修改，後續所有雜湊指紋皆失效。
+  * **隱形元數據浮水印**：在敏感 PDF 報告或圖像中，寫入包含 `Falo x Force Cheng` 與下載者 ID 的隱形浮水印，外洩時可精準定位洩漏源頭。
+
+---
+
+## 🛠️ 層次四：落地展示工具 (Implementation)
+
+本專案提供直觀、免安裝的網頁互動小工具，供學員與企業決策者即時驗證觀點：
+
+1. **[等距取字 (ELS) 模擬器](modules/01_steganography/README.md)** ➔ 體驗隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。
+2. **[混淆與編碼轉換器](modules/02_obfuscation/README.md)** ➔ 動手操作 Base64、ROT13 與 URL 實時轉換，釐清編碼與加密差異。
+3. **[國共戰爭密碼書模擬器](modules/04_codebook/README.md)** ➔ 體驗語意代換機制，理解 Tokenizer 機制在數據傳遞中的角色。
 
 ---
 
 > ### 📓 稽核與治理決策日誌 (預留未來擴充空間)
-> *本欄位留空，未來將由 ff (Force Cheng) 逐步補充 iPAS AIAP、台灣 AI 稽核規範、及企業合規案例。*
+> *本欄位留空。未來將由專案發起人 Force Cheng 陸續補充 iPAS AIAP 考照最新指標、台灣 AI 稽核指引（Taiwan AI Audit）更新、與企業落地的合規實務日誌。*
 
 ⸻
 
