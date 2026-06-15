@@ -1,5 +1,5 @@
 版本：v1.2
-時間戳記：2026-06-15 11:27:00
+時間戳記：2026-06-15 12:05:00
 專案名稱：FALO Content Cipher Lab
 作者：Falo x Force Cheng 2026/06/15
 知識體系：Formosa AI Life Outlook (FALO) & Taiwan AI Audit
@@ -15,7 +15,11 @@
      - 重點 3：語意遮蔽與內容隱寫術 (Semantic Obfuscation & Steganography)
    - 同步更新 README.md、README.html、index.html、10_ipas_aiap_map.md、10_ipas_aiap_map.html。
 
-2. 打包 v1.2 版本備份 falo_cipher_lab_v1.2_20260615.zip。
+2. 首頁新增架構圖 Banner 與 Lightbox 互動放大下載功能
+   - 在首頁（Markdown / HTML 雙版本）上方新增實務合規架構圖 falo_cipher_lab_framework.png。
+   - 網頁版實作了流暢的點擊放大 Lightbox 遮罩效果，並提供一鍵「下載高解析度圖表」的功能。
+
+3. 打包 v1.2 版本備份 falo_cipher_lab_v1.2_20260615.zip。
 
 ⸻ 歷史記錄 ⸻
 

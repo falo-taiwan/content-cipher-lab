@@ -5,6 +5,10 @@
 > **建立日期**：2026/06/15  
 > **專案定位**：屬於 Formosa AI Life Outlook (FALO) 知識發行與 Taiwan AI Audit 治理架構的一部分。專注於日常通訊、檔案安全交換、內容保護與 AI 工作流 (AI Workflow) 安全治理。
 
+[![FALO Content Cipher Lab Framework Diagram](assets/images/falo_cipher_lab_framework.png)](assets/images/falo_cipher_lab_framework.png)
+
+*💡 提示：點擊上方圖表可查看高解析度原圖並下載。*
+
 ⸻
 
 ## 一、專案宗旨

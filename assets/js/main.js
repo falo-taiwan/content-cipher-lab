@@ -37,4 +37,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollY = window.scrollY;
     document.body.style.backgroundPosition = `0px ${scrollY * 0.1}px`;
   });
+
+  // Lightbox Modal Mechanism for Framework Diagram
+  const imgWrapper = document.querySelector('.image-wrapper');
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  if (imgWrapper && lightboxModal) {
+    imgWrapper.addEventListener('click', () => {
+      lightboxModal.style.display = 'flex';
+      setTimeout(() => {
+        lightboxModal.style.opacity = '1';
+      }, 10);
+    });
+
+    const closeModal = () => {
+      lightboxModal.style.opacity = '0';
+      setTimeout(() => {
+        lightboxModal.style.display = 'none';
+      }, 300);
+    };
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener('click', closeModal);
+    }
+
+    // Close when clicking outside the image
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal || e.target.classList.contains('lightbox-close')) {
+        closeModal();
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.style.display === 'flex') {
+        closeModal();
+      }
+    });
+  }
 });
