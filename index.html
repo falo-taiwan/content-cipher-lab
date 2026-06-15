@@ -99,7 +99,7 @@
     <div class="logo-area">
       <a href="README.html">
         <span>FALO Content Cipher Lab</span>
-        <span class="badge">首頁 v1.1</span>
+        <span class="badge">首頁 v1.2</span>
       </a>
     </div>
     <nav>
@@ -116,7 +116,7 @@
       <div class="hero-title-splash">
         <h1>FALO Content Cipher Lab</h1>
       </div>
-      <p class="hero-subtitle">內容加密與內容混淆器研究教學專案 (v1.1)</p>
+      <p class="hero-subtitle">內容加密與內容混淆器研究教學專案 (v1.2)</p>
       <div style="margin-top: 1.5rem;">
         <a href="00_project_brief.html" class="btn">進入專案簡介 ➔</a>
         <a href="01_concept_map.html" class="btn btn-secondary" style="margin-left: 1rem;">查看分類地圖 ➔</a>
@@ -124,10 +124,15 @@
       </div>
     </section>
 
-    <!-- Project Mission -->
     <div class="info-card" style="margin-bottom: 3rem;">
       <h3>🎯 專案宗旨</h3>
-      <p>本專案用於整理、展示與教學各種「內容加密、內容混淆、隱寫術、密碼書」概念。我們關注的核心並非駭客攻擊或高深難懂的軍規密碼學推導，而是著重於<strong>日常生活、地端備份到雲端的檔案加密、檔案傳輸以及 AI 時代下的資訊流保護</strong>。我們希望透過「快速、好懂、易操作」的互動教學，讓企業開發者、AI 工作流架構師以及一般大眾，都能建立數位防衛感，落實 AI 治理（AI Governance）。</p>
+      <p>本專案旨在協助企業經理人、AI 工作流架構師與一般使用者，在數位化與 AI 普及的日常工作中，建立實用且具備合規意識的「內容防禦與安全治理」觀念。我們關注的核心並非駭客攻擊或高深難懂的軍規密碼學推導，而是直接聚焦於大眾日常辦公最常面臨的資料安全痛點：</p>
+      <ul style="margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1.6; padding-left: 1.5rem;">
+        <li><strong>溝通傳輸加密</strong>：在 LINE、Slack、Email 傳遞密碼、合約或機密文件，如何防範中途攔截與不慎錯發？</li>
+        <li><strong>地端備份到雲端</strong>：重要檔案同步上傳至 Google Drive 或雲端儲存（如 S3）時，如何在地端完成加密，防範雲端外洩或勒索軟體威脅？</li>
+        <li><strong>AI 應用隱私防護</strong>：將個資與企業機密送往 ChatGPT 等大模型時，如何進行去識別化與語意遮蔽以防洩密？</li>
+      </ul>
+      <p>我們希望透過「快速、好懂、易操作」的互動教學，讓企業開發者、AI 規劃師以及一般大眾都能建立數位防衛感，落實 AI 治理（AI Governance）並順利對接《台灣人工智慧基本法》與 ISO 27001 / ISO 42001 規範。</p>
     </div>
 
     <!-- 4 Layers Architecture Section -->
@@ -288,22 +293,23 @@
 
     <!-- Layer 4: Implementation -->
     <h3 style="margin-top: 3rem;">🛠️ 層次四：落地展示工具 (Implementation)</h3>
-    <p>本專案規劃有多個不同的實驗工具。第一階段優先實作並突顯以下三個<strong>經典教學展示工具</strong>，用以對照與驗證完全不同的底層安全防禦原理：</p>
+    <p>本專案規劃有多個不同的實驗工具。我們優先實作並突顯以下三大<strong>實務防禦與教學展示重點</strong>，用以對照與驗證完全不同的底層安全防禦原理：</p>
     <div class="grid-3" style="margin-bottom: 3rem;">
       <div class="info-card">
-        <h4>A. 內容隱藏</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">等距取字 (ELS) 模擬器。體驗內容隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。</p>
-        <a href="modules/01_steganography/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
-      </div>
-      <div class="info-card rose">
-        <h4>B. 內容混淆</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">實時 Base64/ROT13/URL 轉換器。體驗編碼轉換，突破「看不懂就是加密」的資安盲區。</p>
+        <h4>1. 溝通安全與傳輸加密</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>聚焦場景：</strong>防範即時通訊的敏感資訊洩漏與中途攔截。<br><strong>展示工具：</strong>混淆與編碼轉換器。體驗 Base64、ROT13 等實時轉換，釐清安全盲區。</p>
         <a href="modules/02_obfuscation/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
       </div>
+      <div class="info-card rose">
+        <h4>2. 檔案保全與雲端備份安全</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>聚焦場景：</strong>防範地端檔案備份到雲端時的外洩與竄改。<br><strong>展示工具：</strong>AES-256 加密與完整性校驗。演練地端加密與雜湊校驗以保障安全。</p>
+        <a href="modules/05_encryption/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
+      </div>
       <div class="info-card blue">
-        <h4>D. 密碼書系統</h4>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">語意代號對照編解碼模擬器。理解 Token 映射在資訊傳遞中的安全性與侷限。</p>
-        <a href="modules/04_codebook/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
+        <h4>3. 語意遮蔽與內容隱寫術</h4>
+        <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>聚焦場景：</strong>防止敏感個資暴露給 AI，或在公開管道隱蔽傳輸。<br><strong>展示工具：</strong>密碼書與等距取字模擬器。驗證語意去識別化與隱寫術原理。</p>
+        <a href="modules/04_codebook/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟密碼書 ➔</a>
+        <a href="modules/01_steganography/README.html" class="btn btn-secondary" style="margin-top: 0.5rem; display: inline-block;">開啟隱寫術 ➔</a>
       </div>
     </div>
 

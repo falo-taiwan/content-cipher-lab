@@ -280,22 +280,23 @@
 
     <!-- Layer 4: Implementation -->
     <h2 style="margin-top: 3rem;">🛠️ 層次四：落地展示工具 (Implementation)</h2>
-    <p>本專案規劃有多個不同的實驗工具。第一階段優先實作並突顯以下三個<strong>經典教學展示工具</strong>，用以對照與驗證完全不同的底層安全防禦原理：</p>
+    <p>本專案規劃有多個不同的實驗工具。我們優先實作並突顯以下三大**實務防禦與教學展示重點**，用以對照與驗證完全不同的底層安全防禦原理：</p>
     <div class="grid-3">
       <div class="info-card">
-        <h3>A. 內容隱藏</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">等距取字 (ELS) 模擬器。體驗內容隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。</p>
-        <a href="modules/01_steganography/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
-      </div>
-      <div class="info-card rose">
-        <h3>B. 內容混淆</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">實時 Base64/ROT13/URL 轉換器。體驗編碼轉換，突破「看不懂就是加密」的資安盲區。</p>
+        <h3>1. 溝通安全與傳輸加密</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>聚焦場景：</strong>防範即時通訊的敏感資訊洩漏與中途攔截。<br><strong>展示工具：</strong>混淆與編碼轉換器。體驗 Base64、ROT13 等實時轉換，釐清安全盲區。</p>
         <a href="modules/02_obfuscation/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
       </div>
+      <div class="info-card rose">
+        <h3>2. 檔案保全與雲端備份安全</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>聚焦場景：</strong>防範地端檔案備份到雲端時的外洩與竄改。<br><strong>展示工具：</strong>AES-256 加密與完整性校驗。演練地端加密與雜湊校驗以保障安全。</p>
+        <a href="modules/05_encryption/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
+      </div>
       <div class="info-card blue">
-        <h3>D. 密碼書系統</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">語意代號對照編解碼模擬器。理解 Token 映射在資訊傳遞中的安全性與侷限。</p>
-        <a href="modules/04_codebook/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟工具 ➔</a>
+        <h3>3. 語意遮蔽與內容隱寫術</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>聚焦場景：</strong>防止敏感個資暴露給 AI，或在公開管道隱蔽傳輸。<br><strong>展示工具：</strong>密碼書與等距取字模擬器。驗證語意去識別化與隱寫術原理。</p>
+        <a href="modules/04_codebook/README.html" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;">開啟密碼書 ➔</a>
+        <a href="modules/01_steganography/README.html" class="btn btn-secondary" style="margin-top: 0.5rem; display: inline-block;">開啟隱寫術 ➔</a>
       </div>
     </div>
 

@@ -1,3 +1,24 @@
+版本：v1.2
+時間戳記：2026-06-15 11:27:00
+專案名稱：FALO Content Cipher Lab
+作者：Falo x Force Cheng 2026/06/15
+知識體系：Formosa AI Life Outlook (FALO) & Taiwan AI Audit
+
+⸻ v1.2 升級說明 ⸻
+
+1. 專案宗旨與三大展示重點行為導向重構
+   - 將原本技術導向的名詞（如 ELS、Base64、密碼書）重組為以「實務防禦行為」為導向的描述。
+   - 宗旨融入「溝通傳輸加密」、「地端備份到雲端檔案加密」與「AI 應用個資隱私防護」等實務痛點，貼近多數人辦公與開發場景。
+   - 三大展示重點重構為：
+     - 重點 1：溝通安全與傳輸加密 (Secure Communication & Transit)
+     - 重點 2：檔案保全與雲端備份安全 (Backup & Storage Security)
+     - 重點 3：語意遮蔽與內容隱寫術 (Semantic Obfuscation & Steganography)
+   - 同步更新 README.md、README.html、index.html、10_ipas_aiap_map.md、10_ipas_aiap_map.html。
+
+2. 打包 v1.2 版本備份 falo_cipher_lab_v1.2_20260615.zip。
+
+⸻ 歷史記錄 ⸻
+
 版本：v1.1
 時間戳記：2026-06-15 11:17:12
 專案名稱：FALO Content Cipher Lab
@@ -12,7 +33,7 @@
    - 其他對照地圖與各別模組頁面，則作為細部延伸說明，大大提升了上課傳教、概念佈道與產品推銷的開場張力。
 
 2. 全文去識別化與路徑相對化
-   - 移除了內部 AI 助手的專屬代號 (smf, sxf, aaa) 及其分工，改為更符合開源專案規章的「Force Cheng (專案發起人)」與「FALO 開源社群與協作團隊」。
+   - 移成了內部 AI 助手的專屬代號 (smf, sxf, aaa) 及其分工，改為更符合開源專案規章的「Force Cheng (專案發起人)」與「FALO 開源社群與協作團隊」。
    - 全面將 `file:///Users/force/...` 本機絕對連結改寫為 GitHub 相對路徑。
 
 3. 壓縮備份升級

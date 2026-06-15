@@ -76,11 +76,17 @@
 
 ## 🛠️ 層次四：落地展示工具 (Implementation)
 
-本專案規劃有多個不同的實驗工具。第一階段特別優先實作並突顯以下三個**經典教學展示工具**，用以對照與驗證完全不同的底層安全防禦原理：
+本專案規劃有多個不同的實驗工具。我們優先實作並突顯以下三大**實務防禦與教學展示重點**，用以對照與驗證完全不同的底層安全防禦原理：
 
-1. **[等距取字 (ELS) 模擬器](modules/01_steganography/README.md)** ➔ 體驗內容隱寫術如何將訊息藏於無形，與 AI 語意識別邊界。
-2. **[混淆與編碼轉換器](modules/02_obfuscation/README.md)** ➔ 體驗 Base64、ROT13 與 URL 實時轉換，突破「看不懂就是加密」的典型資安盲區。
-3. **[國共戰爭密碼書模擬器](modules/04_codebook/README.md)** ➔ 體驗語意代換機制，理解 Tokenizer 機制在數據傳遞中的角色。
+1. **溝通安全與傳輸加密 (Secure Communication & Transit)**：
+   * **聚焦場景**：防範日常即時通訊（LINE、Slack、Email）的敏感資訊洩漏與中途攔截。
+   * **展示工具**：[混淆與編碼轉換器](modules/02_obfuscation/README.md) ➔ 體驗 Base64、ROT13 與 URL 實時轉換，突破大眾「看不懂就是加密」的資安盲區，理解傳輸防護。
+2. **檔案保全與雲端備份安全 (Backup & Storage Security)**：
+   * **聚焦場景**：防範地端檔案備份到雲端（AWS S3、OneDrive）時，因設定疏忽或平台漏洞導致的外洩與惡意篡改。
+   * **展示工具**：[AES-256 加密與完整性校驗](modules/05_encryption/README.md) ➔ 演練地端加密與雜湊校驗，確保資料在雲端環境的安全。
+3. **語意遮蔽與內容隱寫術 (Semantic Obfuscation & Steganography)**：
+   * **聚焦場景**：防止敏感個資與機密在傳送給 AI 大模型時裸奔，或在公開渠道進行隱蔽通訊。
+   * **展示工具**：[國共戰爭密碼書模擬器](modules/04_codebook/README.md) 與 [等距取字 (ELS) 模擬器](modules/01_steganography/README.md) ➔ 驗證語意代換去識別化與隱寫術的底層原理。
 
 🔗 **完整導覽**：如欲瀏覽、操作專案中完整的九大模組工具鏈與後續開發計畫，請前往 [全景知識分類地圖](01_concept_map.md) 或 [實驗室首頁](README.md)。
 
